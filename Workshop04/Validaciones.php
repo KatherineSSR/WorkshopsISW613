@@ -2,7 +2,7 @@
 include 'conexion.php';
 include 'objUsuario.php';
 
-class ValidarLogin {
+class Validaciones {
     
     public function validar($conn, $nombre, $cedula) {
         $sql = "SELECT * FROM usuarios WHERE nombre = ? AND cedula = ?";
@@ -22,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombre = $_POST['nombre'] ?? '';
     $cedula = $_POST['cedula'] ?? '';
 
-    $validador = new ValidarLogin();
-    
+    $validador = new Validaciones();
+
     if ($validador->validar($conn, $nombre, $cedula)) {
         echo "Inicio de sesión exitoso. Bienvenido, " . htmlspecialchars($nombre);
     } else {

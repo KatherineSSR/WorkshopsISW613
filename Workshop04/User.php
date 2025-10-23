@@ -2,7 +2,7 @@
 include 'conexion.php';
 include 'objUsuario.php';
 
-class SaveUser {
+class User {
     public function save($conn, $nombre, $apellidos, $cedula, $provincia) {
 
         $usuario = new Usuario($nombre, $apellidos, $cedula, $provincia);
@@ -26,7 +26,7 @@ class SaveUser {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $saveUser = new SaveUser();
-    $saveUser->save($conn, $_POST['nombre'], $_POST['apellidos'], $_POST['cedula'], $_POST['provincia']);
+    $user = new User();
+    $user->save($conn, $_POST['nombre'], $_POST['apellidos'], $_POST['cedula'], $_POST['provincia']);
 }
 ?>
