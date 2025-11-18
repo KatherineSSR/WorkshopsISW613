@@ -49,6 +49,7 @@ class CreateStudentsTable extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
+        //$this->forge->addForeignKey('career_id', 'careers', 'id', 'CASCADE', 'SET NULL');
         $this->forge->createTable('students');
     }
 

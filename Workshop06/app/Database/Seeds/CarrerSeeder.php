@@ -9,7 +9,7 @@ class CareerSeeder extends Seeder
     public function run()
     {
         $data = [
-            ['name' => 'Ingeniería del Software', 'description' => 'Estudio de metodologías y técnicas para el desarrollo de software', 'duration_years' => 4]
+            ['name' => 'Ingeniería del Software', 'description' => 'Técnicas para el desarrollo de software', 'duration_years' => 4]
         ];
 
         $this->db->table('careers')->insertBatch($data);
